@@ -29,18 +29,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: npm install # устанавливаем зависимости заново
       - run: make start
   test:
     needs: start
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: npm install
       - run: make test
   lint:
     needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: npm install
       - run: make lint
   phony:
     needs: lint
