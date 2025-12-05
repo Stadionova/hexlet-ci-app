@@ -24,13 +24,6 @@ jobs:
       - uses: actions/checkout@v4
       - run: npm install
       - run: make build
-  start:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: npm install # устанавливаем зависимости заново
-      - run: make start
   test:
     needs: start
     runs-on: ubuntu-latest
