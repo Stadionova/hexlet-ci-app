@@ -25,7 +25,7 @@ jobs:
       - run: npm install
       - run: make build
   test:
-    needs: start
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
