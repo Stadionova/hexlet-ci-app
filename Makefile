@@ -1,3 +1,5 @@
+.PHONY: setup install build start test lint
+
 setup: install build
 
 install:
@@ -14,5 +16,3 @@ test:
 
 lint:
 	npx eslint .
-
-.PHONY: build
